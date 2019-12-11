@@ -1,11 +1,13 @@
 package com.example.dpcalculator;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -45,6 +47,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        if(TextUtils.isEmpty(et_input_number.getText())){
+            Toast.makeText(this, "请输入要转换的数值", Toast.LENGTH_SHORT).show();
+            return;
+        }
         float inputNumber = Float.parseFloat(et_input_number.getText().toString());
         int outputNumber = 0;
         switch (v.getId()) {
