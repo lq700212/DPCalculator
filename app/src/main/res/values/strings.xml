@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DPCalculator</string>
+    <string name="number">请输入要转换的数值</string>
+</resources>
